@@ -13,7 +13,6 @@ dotenv.config();
 connectDB();
 
 app.get("/user", (req, res) => {
-  console.log("coming to default url");
   res.send("server is running fine");
 });
 
