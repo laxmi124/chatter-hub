@@ -51,7 +51,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "/api/user",
+        "http://localhost:5000/api/user",
         {
           name,
           email,
@@ -95,18 +95,19 @@ const Signup = () => {
       });
       return;
     }
-    console.log(pics);
+    console.log({ pics });
     if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
       data.append("file", pics);
-      data.append("upload_preset", "chat-app");
-      data.append("cloud_name", "piyushproj");
-      fetch("https://api.cloudinary.com/v1_1/piyushproj/image/upload", {
+      data.append("upload_preset", "chatter-hub");
+      data.append("cloud_name", "dvxbytqm9");
+      fetch("https://api.cloudinary.com/v1_1/dvxbytqm9/image/upload", {
         method: "post",
         body: data,
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log({ data });
           setPic(data.url.toString());
           console.log(data.url.toString());
           setPicLoading(false);
