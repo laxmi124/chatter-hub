@@ -5,6 +5,7 @@ const connectDB = require("./config/db");
 const colors = require("colors");
 const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
+const messageRoutes = require("./routes/messageRoutes");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -20,7 +21,9 @@ app.get("/user", (req, res) => {
 });
 
 app.use("/api/user", userRoutes);
-app.use("/api/chat", chatRoutes)
+app.use("/api/chat", chatRoutes);
+app.use("/api/message", messageRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`port is running on ${PORT} `.yellow.bold);
