@@ -35,4 +35,21 @@ const sendMessage = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { sendMessage };
+const getMessage = asyncHandler(async (req, res) => {
+  const { chatId } = req.params;
+  if (!chatId) {
+    res.status(400).send("Please share the chat Id");
+    return;
+  }
+  try {
+    const message = await Message.find({ chat: req.params.chatId })
+      .populate("sender", "name pic email")
+      .populate("chat");
+
+    res.status(200).json(message);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+});
+
+module.exports = { sendMessage, getMessage };
