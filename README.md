@@ -69,3 +69,4 @@ To run Chatter Hub, you need to set up both the frontend and the backend. Follow
 2. Sign up or log in to start using the chat application.
 3. Explore the features mentioned in the Features section.
 
+<img src="images/real-time-messaging.png" alt="Chat Example" width="500" />
