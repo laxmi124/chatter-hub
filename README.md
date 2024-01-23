@@ -70,3 +70,6 @@ To run Chatter Hub, you need to set up both the frontend and the backend. Follow
 3. Explore the features mentioned in the Features section.
 
 <img src="images/real-time-messaging.png" alt="Chat Example" width="500" />
+<img src="images/group-chat-ss.png" alt="Chat Example" width="500" />
+<img src="images/goup-chat-create.png" alt="Chat Example" width="500" />
+
